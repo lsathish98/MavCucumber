@@ -1,12 +1,13 @@
-
 @tag
-Feature: To test login functionality
+Feature: Login validation
 
   @tag1
-  Scenario: Verify login functionality
-    Given The user is in FB login page
-    When The user enter valid credentials
-    Then The user prompts to FB home page
-   
+  Scenario Outline: To validate login functionality
+    Given the user in fb page
+    When the user enter credentials "<userid>" , "<password>"
+    Then the user prompts to fb page
 
- 
+    Examples: 
+      | userid | password  |
+      | user1  | password1 |
+      | user2  | password2 |
